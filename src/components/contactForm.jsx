@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../store/operations";
+import { selectAllContacts } from "../store/contactsSlice"; 
 
 export const ContactForm = () => {
   const [name, setName] = useState("");
@@ -9,7 +9,7 @@ export const ContactForm = () => {
 
   const dispatch = useDispatch();
 
-  const contacts = useSelector((state) => state.contacts.items);
+  const contacts = useSelector(selectAllContacts);
 
   const handleSubmit = (e) => {
     e.preventDefault();

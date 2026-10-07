@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteContact } from "../store/operations";
+import { selectAllContacts } from "../store/contactsSlice";
 
 export const ContactList = () => {
-  const contacts = useSelector((state) => state.contacts.items);
+  const contacts = useSelector(selectAllContacts);
   const filter = useSelector((state) => state.filter);
 
   const dispatch = useDispatch();
